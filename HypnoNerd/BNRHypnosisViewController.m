@@ -6,15 +6,16 @@
 //
 
 #import "BNRHypnosisViewController.h"
+#import "BNRHypnosisView.h"
 
 @implementation BNRHypnosisViewController
 
 
 - (void)loadView
 {
-    [super loadView];
+    BNRHypnosisView *backgroundView = [[BNRHypnosisView alloc] init];
     
-    self.view.backgroundColor = [UIColor systemCyanColor];
+    self.view = backgroundView;
 }
 
 

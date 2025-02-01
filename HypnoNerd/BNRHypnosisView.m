@@ -21,7 +21,7 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = [UIColor clearColor]; // transparent
+        self.backgroundColor = [UIColor whiteColor];
         self.circleColor = [self getRandomColor];
         self.gradientTopColor = [self getRandomColor];
         self.gradientBottomColor = [self getRandomColor];
