@@ -8,14 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		A521C3F62D4ED98200962D00 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A521C3F52D4ED98200962D00 /* README.md */; };
-		A521C4262D4EE96300962D00 /* BNRReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A521C4252D4EE96300962D00 /* BNRReminderViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A521C3D82D4ED97700962D00 /* HypnoNerd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HypnoNerd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A521C3F52D4ED98200962D00 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		A521C4242D4EE96300962D00 /* BNRReminderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BNRReminderViewController.h; sourceTree = "<group>"; };
-		A521C4252D4EE96300962D00 /* BNRReminderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BNRReminderViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -53,8 +50,6 @@
 		A521C3CF2D4ED97700962D00 = {
 			isa = PBXGroup;
 			children = (
-				A521C4242D4EE96300962D00 /* BNRReminderViewController.h */,
-				A521C4252D4EE96300962D00 /* BNRReminderViewController.m */,
 				A521C3F52D4ED98200962D00 /* README.md */,
 				A521C3DA2D4ED97700962D00 /* HypnoNerd */,
 				A521C3D92D4ED97700962D00 /* Products */,
@@ -143,7 +138,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A521C4262D4EE96300962D00 /* BNRReminderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

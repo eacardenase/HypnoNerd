@@ -54,7 +54,7 @@
 - (void)addReminder:(id)sender
 {
     NSDate *date = self.datePicker.date;
-    NSLog(@"Setting a reminder for", date);
+    NSLog(@"Setting a reminder for %@", date);
 }
 
 
