@@ -7,6 +7,7 @@
 
 #import "SceneDelegate.h"
 #import "BNRHypnosisViewController.h"
+#import "BNRReminderViewController.h"
 
 @interface SceneDelegate ()
 
@@ -21,7 +22,7 @@
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     
     self.window = [[UIWindow alloc] initWithWindowScene:(UIWindowScene *)scene];
-    self.window.rootViewController = [BNRHypnosisViewController new];
+    self.window.rootViewController = [BNRReminderViewController new];
     
     [self.window makeKeyAndVisible];
 }
