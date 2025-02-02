@@ -22,7 +22,15 @@
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     
     self.window = [[UIWindow alloc] initWithWindowScene:(UIWindowScene *)scene];
-    self.window.rootViewController = [BNRReminderViewController new];
+    
+    BNRHypnosisViewController *hypnosisViewController = [BNRHypnosisViewController new];
+    BNRReminderViewController *reminderViewController = [BNRReminderViewController new];
+    
+    UITabBarController *tabBarController = [UITabBarController new];
+    tabBarController.viewControllers = @[hypnosisViewController, reminderViewController];
+    tabBarController.tabBar.translucent = NO;
+    
+    self.window.rootViewController = tabBarController;
     
     [self.window makeKeyAndVisible];
 }

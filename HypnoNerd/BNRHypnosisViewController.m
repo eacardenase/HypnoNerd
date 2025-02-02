@@ -11,6 +11,17 @@
 @implementation BNRHypnosisViewController
 
 
+- (instancetype)init
+{
+    if (self = [super init]) {
+        self.tabBarItem.title = @"Hypnosis";
+        self.tabBarItem.image = [UIImage systemImageNamed:@"hurricane"];
+    }
+    
+    return self;
+}
+
+
 - (void)loadView
 {
     BNRHypnosisView *backgroundView = [[BNRHypnosisView alloc] init];

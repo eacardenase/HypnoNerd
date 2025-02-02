@@ -17,6 +17,16 @@
 @implementation BNRReminderViewController
 
 
+- (instancetype)init
+{
+    if (self = [super init]) {
+        self.tabBarItem.title = @"Reminder";
+        self.tabBarItem.image = [UIImage systemImageNamed:@"clock"];
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
