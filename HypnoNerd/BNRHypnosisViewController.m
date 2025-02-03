@@ -8,7 +8,7 @@
 #import "BNRHypnosisViewController.h"
 #import "BNRHypnosisView.h"
 
-@interface BNRHypnosisViewController ()
+@interface BNRHypnosisViewController () <UITextFieldDelegate>
 
 @property (nonatomic, strong) UITextField *textField;
 
@@ -51,6 +51,8 @@
     self.textField.returnKeyType = UIReturnKeyDone;
     self.textField.backgroundColor = [UIColor colorWithWhite:1 alpha:0.85];
     self.textField.borderStyle = UITextBorderStyleRoundedRect;
+    self.textField.delegate = self;
+    self.textField.autocapitalizationType = UITextAutocapitalizationTypeSentences;
     
     self.textField.translatesAutoresizingMaskIntoConstraints = NO;
     
@@ -61,6 +63,17 @@
         [self.textField.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor constant:60],
         [self.textField.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor constant:-60],
     ]];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    NSLog(@"%@", textField.text);
+    
+    textField.text = @"";
+    
+    [self.textField resignFirstResponder];
+    
+    return YES;
 }
 
 
