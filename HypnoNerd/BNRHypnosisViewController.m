@@ -8,6 +8,12 @@
 #import "BNRHypnosisViewController.h"
 #import "BNRHypnosisView.h"
 
+@interface BNRHypnosisViewController ()
+
+@property (nonatomic, strong) UITextField *textField;
+
+@end
+
 @implementation BNRHypnosisViewController
 
 
@@ -27,6 +33,8 @@
     BNRHypnosisView *backgroundView = [[BNRHypnosisView alloc] init];
     
     self.view = backgroundView;
+    
+    [self setupViews];
 }
 
 - (void)viewDidLoad
@@ -34,6 +42,25 @@
     [super viewDidLoad];
     
     NSLog(@"BNRHypnosisViewController loaded its view.");
+}
+
+- (void)setupViews
+{
+    self.textField = [UITextField new];
+    self.textField.placeholder = @"Hypnotize me";
+    self.textField.returnKeyType = UIReturnKeyDone;
+    self.textField.backgroundColor = [UIColor colorWithWhite:1 alpha:0.85];
+    self.textField.borderStyle = UITextBorderStyleRoundedRect;
+    
+    self.textField.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [self.view addSubview:self.textField];
+    
+    [NSLayoutConstraint activateConstraints:@[
+        [self.textField.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:40],
+        [self.textField.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor constant:60],
+        [self.textField.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor constant:-60],
+    ]];
 }
 
 
