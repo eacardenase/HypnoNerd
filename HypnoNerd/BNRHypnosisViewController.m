@@ -65,12 +65,42 @@
     ]];
 }
 
+- (void)drawHypnoticMessage:(NSString *)message
+{
+    for (int i = 0; i < 20; i++) {
+        UILabel *messageLabel = [[UILabel alloc] init];
+        
+        messageLabel.backgroundColor = [UIColor clearColor]; // transparent
+        messageLabel.textColor = [UIColor darkGrayColor];
+        messageLabel.text = message;
+        
+        [messageLabel sizeToFit];
+        
+        int width = (int)self.view.bounds.size.width - messageLabel.bounds.size.width;
+        int x = arc4random() % width;
+        
+        int height = (int)self.view.bounds.size.height - messageLabel.bounds.size.height;
+        int y = arc4random() % height;
+        
+        CGRect frame = messageLabel.frame;
+        frame.origin = CGPointMake(x, y);
+        messageLabel.frame = frame;
+        
+        [self.view addSubview:messageLabel];
+    }
+}
+
+# pragma mark - UITextFieldDelegate
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    NSLog(@"%@", textField.text);
+    if ([textField.text isEqualToString:@""]) {
+        return NO;
+    }
+    
+    [self drawHypnoticMessage:textField.text];
     
     textField.text = @"";
-    
     [self.textField resignFirstResponder];
     
     return YES;
