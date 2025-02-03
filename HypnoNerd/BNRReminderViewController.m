@@ -27,11 +27,17 @@
     return self;
 }
 
+- (void)loadView
+{
+    self.view = [UIView new];
+    [self setupViews];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    [self setupViews];
+    NSLog(@"BNRReminderViewController loaded its view.");
 }
 
 - (void)setupViews
