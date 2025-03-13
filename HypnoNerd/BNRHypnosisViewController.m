@@ -110,7 +110,9 @@
                 int y = arc4random() % height;
                 messageLabel.center = CGPointMake(x, y);
             }];
-        } completion:NULL];
+        } completion:^(BOOL finished) {
+            NSLog(@"Animation finished");
+        }];
         
         UIInterpolatingMotionEffect *motionEffect;
         motionEffect = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x"
