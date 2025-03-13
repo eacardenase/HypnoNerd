@@ -88,6 +88,12 @@
         
         [self.view addSubview:messageLabel];
         
+        messageLabel.alpha = 0;
+        
+        [UIView animateWithDuration:0.5 animations:^{
+            messageLabel.alpha = 1;
+        }];
+        
         UIInterpolatingMotionEffect *motionEffect;
         motionEffect = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x"
                                                                        type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
