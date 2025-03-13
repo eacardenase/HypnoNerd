@@ -90,9 +90,12 @@
         
         messageLabel.alpha = 0;
         
-        [UIView animateWithDuration:0.5 animations:^{
+        [UIView animateWithDuration:0.5
+                              delay:0.0
+                            options:UIViewAnimationCurveEaseIn
+                         animations:^{
             messageLabel.alpha = 1;
-        }];
+        } completion:NULL];
         
         UIInterpolatingMotionEffect *motionEffect;
         motionEffect = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x"
